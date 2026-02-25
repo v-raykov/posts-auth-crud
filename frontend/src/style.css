@@ -1,0 +1,78 @@
+:root {
+    --primary: #42b883;
+    --primary-dark: #35495e;
+    --bg: #f8f9fa;
+    --white: #ffffff;
+    --error: #e74c3c;
+    --border: #ddd;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+#app {
+    width: 100%;
+    max-width: 600px;
+}
+
+.card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: var(--primary);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: opacity 0.2s;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button.secondary {
+    background-color: var(--primary-dark);
+    margin-left: 8px;
+}
+
+button.danger {
+    background-color: var(--error);
+}
+
+.post-item {
+    background: white;
+    border-left: 5px solid var(--primary);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.post-actions {
+    margin-top: 1rem;
+    display: flex;
+    gap: 10px;
+}
