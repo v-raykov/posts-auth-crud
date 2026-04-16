@@ -26,10 +26,12 @@ const handleSubmit = async () => {
     if (isLogin.value) {
       const { data } = await authApi.login(email.value, password.value);
       localStorage.setItem('token', data.token);
+      localStorage.setItem('user', JSON.stringify({ email: email.value }));
     } else {
       await authApi.register(email.value, password.value);
       const { data } = await authApi.login(email.value, password.value);
       localStorage.setItem('token', data.token);
+      localStorage.setItem('user', JSON.stringify({ email: email.value }));
     }
     emit('auth-success');
   } catch (err) {

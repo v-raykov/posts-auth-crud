@@ -2,7 +2,10 @@
   <div id="app">
     <nav>
       <h1>Viktor - 21105</h1>
-      <button v-if="token" @click="logout">Logout</button>
+      <div v-if="token">
+        <span>Logged as: {{ user.email }}</span>
+        <button @click="logout">Logout</button>
+      </div>
     </nav>
 
     <div v-if="!token">
@@ -25,10 +28,13 @@ import PostList from './components/PostList.vue';
 import { postApi } from './api';
 
 const token = ref(null);
+const user = ref(null);
 const posts = ref([]);
 
 const checkAuth = () => {
   token.value = localStorage.getItem('token');
+  const userStr = localStorage.getItem('user');
+  user.value = userStr ? JSON.parse(userStr) : null;
   if (token.value) fetchPosts();
 };
 
@@ -39,7 +45,9 @@ const fetchPosts = async () => {
 
 const logout = () => {
   localStorage.removeItem('token');
+  localStorage.removeItem('user');
   token.value = null;
+  user.value = null;
   posts.value = [];
 };
 

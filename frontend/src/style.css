@@ -76,3 +76,15 @@ button.danger {
     display: flex;
     gap: 10px;
 }
+
+.post-meta {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+button.like-btn {
+    background-color: #f1f1f1;
+    color: #333;
+}

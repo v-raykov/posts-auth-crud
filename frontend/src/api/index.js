@@ -25,4 +25,6 @@ export const postApi = {
     createPost: (title, content) => api.post('/posts', { title, content }),
     updatePost: (id, title, content) => api.put(`/posts/${id}`, { title, content }),
     deletePost: (id) => api.delete(`/posts/${id}`),
+    likePost: (id) => api.post(`/posts/${id}/like`),
+    unlikePost: (id) => api.post(`/posts/${id}/unlike`),
 };
